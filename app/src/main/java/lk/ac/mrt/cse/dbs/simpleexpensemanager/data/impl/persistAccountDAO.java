@@ -13,14 +13,14 @@ import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.AccountDAO;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.exception.InvalidAccountException;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.Account;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.ExpenseType;
-import lk.ac.mrt.cse.dbs.simpleexpensemanager.db.DatabaseHandler;
+import lk.ac.mrt.cse.dbs.simpleexpensemanager.database.DatabaseHandler;
 
 public class PersistAccountDAO implements AccountDAO {
 
     private Context context;
 
     //Constructor
-    public PersistentAccountDAO(Context context) {
+    public PersistAccountDAO(Context context) {
 
         this.context = context;
     }
@@ -42,7 +42,7 @@ public class PersistAccountDAO implements AccountDAO {
         //Add account numbers to a list
         while (cursor.moveToNext())
         {
-            resultSet.add(cursor.getString(cursor.getColumnIndex(handler.accountNoNo)));
+            resultSet.add(cursor.getString(cursor.getColumnIndex(handler.getAccountNo())));
         }
 
         cursor.close();
@@ -118,7 +118,7 @@ public class PersistAccountDAO implements AccountDAO {
     @Override
     public void addAccount(Account account) {
 
-        Databasehanler handler = DatabaseHandler.getInstance(context);
+        DatabaseHandler handler = DatabaseHandler.getInstance(context);
         SQLiteDatabase db = handler.getWritableDatabase();
 
         //Save account details to the account table
@@ -150,7 +150,7 @@ public class PersistAccountDAO implements AccountDAO {
                     cursor.getString(cursor.getColumnIndex(handler.getBankName())),
                     cursor.getString(cursor.getColumnIndex(handler.getAccountHolderName())),
                     cursor.getDouble(cursor.getColumnIndex(handler.getBalance())));
-            db.delete(handler.accountTable, handler.accountNo + " = ?", new String[] { accountNo });
+            db.delete(handler.getAccountTable(), handler.getAccountNo() + " = ?", new String[] { accountNo });
             cursor.close();
 
         }

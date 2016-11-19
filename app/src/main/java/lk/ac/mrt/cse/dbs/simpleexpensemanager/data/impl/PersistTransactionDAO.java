@@ -14,14 +14,14 @@ import java.util.List;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.TransactionDAO;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.ExpenseType;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.Transaction;
-import lk.ac.mrt.cse.dbs.simpleexpensemanager.db.DatabaseHandler;
+import lk.ac.mrt.cse.dbs.simpleexpensemanager.database.DatabaseHandler;
 
 public class PersistTransactionDAO implements TransactionDAO {
 
     private Context context;
 
     //Constructor
-    public PersistentTransactionDAO(Context context) {
+    public PersistTransactionDAO(Context context) {
 
         this.context = context;
     }
