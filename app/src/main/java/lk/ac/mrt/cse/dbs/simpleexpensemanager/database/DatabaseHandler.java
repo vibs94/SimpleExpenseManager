@@ -24,7 +24,7 @@ public class databaseHandler extends SQLiteOpenHelper {
     private static final String amount = "amount";
 
 
-    public databaseHandler(Context context) {
+    private databaseHandler(Context context) {
 
         super(context, dbName, null, databaseVersion);
     }
