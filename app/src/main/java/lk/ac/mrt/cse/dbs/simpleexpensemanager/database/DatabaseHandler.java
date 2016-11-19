@@ -43,9 +43,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
-        String accountTableSQL = "CREATE TABLE "+accountTable+"("+accountNo+" VARCHAR(20) NOT NULL PRIMARY KEY,"+bankName+" VARCHAR(100) NULL,"+accountHolderName+" VARCHAR(100) NULL,"+balance+" DECIMAL(10,2) NULL );";
+        String accountTableSQL = "CREATE TABLE "+accountTable+"("+accountNo+" VARCHAR(20) NOT NULL PRIMARY KEY,"+bankName+" VARCHAR(100),"+accountHolderName+" VARCHAR(100),"+balance+" DECIMAL(10,2));";
 
-        String transactionTableSQL = "CREATE TABLE "+transactionTable+"("+transactionId+" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"+accountNo+" VARCHAR(20) NOT NULL,"+date+" DATE NULL,"+amount+" DECIMAL(10,2) NULL,"+expenseType+" VARCHAR(100) NULL, FOREIGN KEY("+accountNo+") REFERENCES "+accountTable+"("+accountNo+");";
+        String transactionTableSQL = "CREATE TABLE "+transactionTable+"("+transactionId+" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"+accountNo+" VARCHAR(20) NOT NULL,"+date+" DATE,"+amount+" DECIMAL(10,2),"+expenseType+" VARCHAR(10), FOREIGN KEY("+accountNo+") REFERENCES "+accountTable+"("+accountNo+"));";
 
         sqLiteDatabase.execSQL(accountTableSQL);
         sqLiteDatabase.execSQL(transactionTableSQL);

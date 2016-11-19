@@ -33,7 +33,7 @@
         jar="D:\sem 4\DB\SimpleExpenseManager\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         revision="23.0.2"
-        sha1="b9c23d5bf92c3f818b158dce24418fa46024d0a7">
+        sha1="4773325ba69bd189e5f5b31192e810b07fc8e7ac">
         <dex dex="D:\sem 4\DB\SimpleExpenseManager\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_8b29491c9160256fef4f56305599731c8c181940\classes.dex" />
     </item>
     <item
@@ -47,7 +47,7 @@
         jar="D:\sem 4\DB\SimpleExpenseManager\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         revision="23.0.2"
-        sha1="4544f4a9b72e7eda249af24676643eda08047026">
+        sha1="d5d1a37c1a47184b27272d441065803d8a2c44cb">
         <dex dex="D:\sem 4\DB\SimpleExpenseManager\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_8fa1d3747169e71a5b4a875d07aa6292c9b08c30\classes.dex" />
     </item>
     <item

@@ -11,8 +11,8 @@ public class PersistExpenseManager extends ExpenseManager {
 
     private Context context;
 
-    public PersistExpenseManager() {
-
+    public PersistExpenseManager(Context context) {
+        this.context=context;
         setup();
     }
 
